@@ -1,0 +1,37 @@
+
+  <ng-container *ngIf="true">
+   <div style="display: flex; justify-content: center; align-items: center; margin-top: 15rem;">
+    <form >
+      <br/>
+      <h3 style="font-size: 70px;
+          font-weight: 600;
+          background-image: linear-gradient(to left, #3c9a49, #08dba7);
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text; font-size: xx-large; text-align: center;">LOGIN</h3>
+      <div class="imgcontainer">
+        <img style="width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYu9wFEOviVSzqkohBw2G3ZIVqMeow52YgqVhtuS7hOeNMl2D2zItDRZ2VCpAjwdhj2Ds&usqp=CAU" alt="Avatar" class="avatar">
+      </div>
+    
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required [(ngModel)]="userName">
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="password">
+            
+        <button type="submit" (click)="login()">Login</button>
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+    
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+   </div>
+  </ng-container>
+  

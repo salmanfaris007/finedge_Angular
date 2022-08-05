@@ -1,0 +1,17 @@
+<div>
+    <h3 style="font-size: 70px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; font-size: xx-large;">Dashboard</h3>
+    <mat-grid-list cols="4" rowHeight="1:1" [gutterSize]="'10px'">
+        <mat-grid-tile
+            *ngFor="let tile of tiles"
+            [colspan]="tile.cols"
+            [rowspan]="tile.rows"
+            [style.background]="tile.color">
+          <img [src]="tile.src"/>
+        </mat-grid-tile>
+      </mat-grid-list>
+</div>

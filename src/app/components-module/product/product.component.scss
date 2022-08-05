@@ -1,0 +1,31 @@
+    
+    ::ng-deep .mat-form-field-label{
+        color:#000 !important;
+    }
+  input{
+    color: #000;
+  }
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+      
+      .example-full-width {
+        width: 100%;
+      }
+
+      table {
+        width: 100%;
+        background-color: white;
+      }
+      td,th{
+        color: #000;
+      }
+      td.mat-cell {
+        /* row padding */
+        /* row border */
+        // border-bottom: 0.5px solid black;
+        border-top: 0.2px solid rgb(184, 184, 184);
+       }
+    

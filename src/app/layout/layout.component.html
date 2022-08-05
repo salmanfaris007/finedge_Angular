@@ -1,0 +1,94 @@
+<ng-container>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <div class="topnav">
+          <a [routerLink]="'/dashboard'">Dashboard</a>
+          <a [routerLink]="'/product'">Product</a>
+          <a [routerLink]="'/orders'">Orders</a>
+        </div>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon"
+          [matMenuTriggerFor]="menu">
+          <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Profile</button>
+          <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+        &nbsp;
+        <button mat-icon-button class="example-icon" >
+          <mat-icon>share</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  <div style="padding-left:16px">
+    <div style="padding: 25px;  ">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</ng-container>
+
+<!-- <mat-drawer-container class="example-container" autosize  [hasBackdrop]="true">
+  <mat-drawer #drawer class="example-sidenav" mode="push" >
+  <div>
+    <h1>&nbsp; My App</h1>
+  </div>
+  <mat-divider></mat-divider>
+
+  <br/>
+  <br/>
+
+    <mat-nav-list>
+      
+        <mat-list-item routerLink="/dashboard" routerLinkActive="active">
+          <div style="display: flex;
+          flex-direction: row;">
+            <mat-icon mat-list-icon>dashboard</mat-icon>
+            <h3>Dashboard </h3>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        
+        <mat-list-item routerLink="/product" routerLinkActive="active">
+          <div style="display: flex;
+          flex-direction: row;">
+            <mat-icon mat-list-icon>shopping_bag</mat-icon>
+            <h3>Products </h3>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        
+        <mat-list-item routerLink="/orders" routerLinkActive="active">
+          <div style="display: flex;
+          flex-direction: row;">
+            <mat-icon mat-list-icon>shopping_cart</mat-icon>
+            <h3>Orders&nbsp;</h3>
+          </div>
+        </mat-list-item>
+
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button  mat-icon-button color="warn" aria-label="Example icon-button with a heart icon" style="color: white;"
+        (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>&nbsp;&nbsp; My App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>person</mat-icon>
+        </button>
+        &nbsp;
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div style="padding: 25px;  ">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container> -->
