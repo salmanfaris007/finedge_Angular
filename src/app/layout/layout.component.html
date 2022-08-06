@@ -1,4 +1,4 @@
-<ng-container>
+<!-- <ng-container>
     <mat-toolbar color="primary">
       <mat-toolbar-row>
         <div class="topnav">
@@ -26,9 +26,9 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-</ng-container>
+</ng-container> -->
 
-<!-- <mat-drawer-container class="example-container" autosize  [hasBackdrop]="true">
+  <mat-drawer-container class="example-container" autosize  [hasBackdrop]="true">
   <mat-drawer #drawer class="example-sidenav" mode="push" >
   <div>
     <h1>&nbsp; My App</h1>
@@ -78,17 +78,22 @@
         </button>
         <span>&nbsp;&nbsp; My App</span>
         <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>person</mat-icon>
+        <button mat-icon-button class="example-icon favorite-icon"
+          [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon>
         </button>
-        &nbsp;
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Profile</button>
+          <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+       &nbsp;
+      <button mat-icon-button class="example-icon" >
+        <mat-icon>share</mat-icon>
+      </button>
       </mat-toolbar-row>
     </mat-toolbar>
     <div style="padding: 25px;  ">
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>
-</mat-drawer-container> -->
+</mat-drawer-container>  

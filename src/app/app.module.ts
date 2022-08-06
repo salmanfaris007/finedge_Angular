@@ -24,6 +24,7 @@ import { OrdersComponent } from './components-module/orders/orders.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
+import { CartComponent } from './components-module/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatCardModule} from '@angular/material/card';
     LayoutComponent,
     DashboardComponent,
     ProductComponent,
-    OrdersComponent
+    OrdersComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

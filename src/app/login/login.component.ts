@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   userName: string;
-  password: any;
+  password: string;
   constructor(private route: Router) { }
 
   ngOnInit(): void {
@@ -17,11 +17,11 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    if(this.userName == 'salman'){ //Valid user
-      localStorage.setItem('user', this.userName)
+    if(this.userName && this.password){ //Valid user
+      localStorage.setItem('user', JSON.stringify({userName: this.userName, role: this.password}))
       this.route.navigate(['dashboard'])
     }else{
-      alert('Enter valid user credintial');
+      alert('Enter user credintial');
     }
   }
 }

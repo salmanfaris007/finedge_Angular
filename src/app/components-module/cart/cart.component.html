@@ -1,0 +1,23 @@
+<!-- <img  style="width: 100%; height: 100%;" [src]="imgSrc"/> -->
+<mat-card class="example-card" style="background-color: white; color: black;">
+    <mat-card-header>
+      <mat-card-title>{{product.productName}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="product.imgSrc" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p style="font-weight: 500;">
+       Product Name : {{product.productName}}
+      </p>
+      <p style="font-weight: 500;">Rate: 50$</p>
+      <button [disabled]="count < 2" mat-icon-button class="example-icon" >
+        <mat-icon>horizontal_rule</mat-icon>
+      </button>
+      <label>{{count}}</label>
+      <button mat-icon-button class="example-icon">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary"  style="width: 50rem;">BUY</button>
+    </mat-card-actions>
+  </mat-card>

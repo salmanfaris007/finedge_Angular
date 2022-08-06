@@ -5,7 +5,9 @@ color: transparent;
 background-clip: text;
 -webkit-background-clip: text; font-size: xx-large;">Products</h3>
 
-<div style="justify-content: center; align-items: center; display: flex;">
+<ng-container *ngIf="userRole == 'admin'">
+  
+  <div style="justify-content: center; align-items: center; display: flex;">
     <mat-card style="background-color: white; width: 40rem;">
         <span style="font-size: 50px;
             font-weight: 200;
@@ -31,21 +33,20 @@ background-clip: text;
             </div>
         </form>
     </mat-card>
-</div>
-<br/>
+  </div>
+  <br/>
 
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
-  
+
     <!-- Position Column -->
     <ng-container matColumnDef="productId">
       <th mat-header-cell *matHeaderCellDef> No. </th>
       <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
     </ng-container>
-  
+
     <!-- Name Column -->
     <ng-container matColumnDef="productName">
       <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -54,8 +55,8 @@ background-clip: text;
         
       </td>
     </ng-container>
-  
-  
+
+
     <!-- Edit Column -->
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef> Edit </th>
@@ -65,7 +66,7 @@ background-clip: text;
           </button>
       </td>
     </ng-container>
-  
+
     <!-- Delete Column -->
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef> Delete </th>
@@ -75,9 +76,28 @@ background-clip: text;
           </button>  
       </td>
     </ng-container>
-  
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  
+</ng-container>
+
+  <br/>
+  <!-- //PRODUCT LIST -->
+<ng-container>
+
+<div class="row">
+  <div class="column" *ngFor="let item of data" >
+    <div class="card">
+      <img [src]="item.imgSrc" style="width: 100%; height: 100%;">
+      <h1>{{item.productName}}</h1>
+      <p class="price">$50.00</p>
+      <p>details </p>
+      <p><button routerLink="./../cart/{{item.productId}}">Add to Cart</button></p>
+    </div>
+
+    
+  </div>  
+</div>
+</ng-container>
 

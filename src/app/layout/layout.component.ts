@@ -11,7 +11,7 @@ export class LayoutComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('user') == "salman"){ // User authenticated
+    if(localStorage.getItem('user')){ // User authenticated
       this.route.navigate(['dashboard']);
      }else{ // Invalid User
       this.route.navigate(['login']);
